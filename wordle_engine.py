@@ -24,22 +24,15 @@ def Start():
                 Checker = True
                 while Checker:
                     guess = input("what is your guess? type Q to quit\n")
-                    if guess == "Q":
-                        sys.exit()
-                    if len(guess) != 5:
-                        raise Exception("The word must be 5 letters!")
-                    if not guess.lower() in words:
-                        print("Not a word!")
-                    else:
-                        Checker = False
+                    if guess == "Q": sys.exit()
+                    if len(guess) != 5: raise Exception("The word must be 5 letters!")
+                    if not guess.lower() in words: print("Not a word!")
+                    else: Checker = False
                 result = []
                 for i in range(5):
-                    if guess[i] == word[i] or guess[i].upper() == word[i].upper():
-                        result.append('✅')
-                    elif guess[i] in word or guess[i].upper() in word.upper():
-                        result.append('⬆️')
-                    else:
-                        result.append('❌')
+                    if guess[i] == word[i] or guess[i].upper() == word[i].upper(): result.append('✅')
+                    elif guess[i] in word or guess[i].upper() in word.upper(): result.append('⬆️')
+                    else: result.append('❌')
                 print(" ".join(result))
                 finalresult.append(" ".join(result))
             if guess == word:
