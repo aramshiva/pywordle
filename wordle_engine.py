@@ -5,7 +5,7 @@ import time
 
 CLEAR = "\033[H\033[J"
 def Start():
-    words = open("/Users/ashiva/Code/PythonCode/Data/wordle.txt", "r")
+    words = open("wordle.txt", "r")
     words = words.read().splitlines()
     word = random.choice(words)
     finalresult = []
